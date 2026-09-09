@@ -98,3 +98,29 @@ models:
         description: "True si la visite a abouti à une commande"
       - name: device
         description: "Type d'appareil utilisé : desktop, mobile, tablet"
+  - name: fact_retours
+    description: "Table de faits recensant l'ensemble des retours produits"
+    columns:
+      - name: id_retour
+        description: "Identifiant unique du retour"
+        tests:
+          - unique
+          - not_null
+      - name: id_commande
+        description: "Identifiant de la commande associee"
+        tests:
+          - not_null
+      - name: id_client
+        description: "Identifiant du client ayant effectue le retour"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_client')
+              field: client_id
+      - name: id_produit
+        description: "Identifiant du produit retourne"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produit')
+              field: produit_id
