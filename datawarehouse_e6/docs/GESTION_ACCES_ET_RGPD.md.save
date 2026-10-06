@@ -1,0 +1,26 @@
+# Politiques de Gestion des Accès et Conformité RGPD
+
+**Projet :** Entrepôt de Données — VenteRapide (Livrable E6)  
+**Auteur :** Équipe Data Engineering  
+**Version :** 1.0  
+
+---
+
+## 1. Procédure d'Ajout et de Gestion des Accès (C16)
+
+### 1.1 Principe de Moindre Privilège & Matrice des Rôles
+L'accès à l'entrepôt `datawarehouse_e6` suit le principe du **moindre privilège** (*Least Privilege Access*). Les utilisateurs sont catégorisés selon trois rôles :
+
+| Rôle / Utilisateur | Type de Compte | Privilèges PostgreSQL | Cas d'Usage |
+| :--- | :--- | :--- | :--- |
+| **`postgres`** | Superuser / Admin | `ALL PRIVILEGES` | Administration, création de base, gestion de l'infrastructure |
+| **`dbt_user`** | Service / Execution | `CREATE`, `SELECT`, `INSERT`, `UPDATE`, `DELETE` | Pipelines ETL/ELT dbt, rafraîchissement des tables et vues |
+| **`reporting`** | Lecture seule (Read-Only) | `SELECT` uniquement | Outils de BI (Metabase, PowerBI), requêtes ad-hoc d'analyse |
+
+---
+
+### 1.2 Procédure Pas-à-Pas pour Créer un Nouvel Utilisateur Analyse/BI
+
+1. **Connexion en tant qu'administrateur :**
+   ```bash
+   psql -d datawarehouse_e6
