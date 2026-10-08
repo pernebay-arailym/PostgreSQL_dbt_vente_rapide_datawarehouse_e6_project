@@ -226,3 +226,24 @@ Audit artifacts proving full compliance for certification review are archived in
 | **Task 3.6 (C17)** | **Point-in-Time Join Execution:** Query output demonstrating historical location matching between order transactions and customer snapshot states. | `09_task_3_6_c17_point_in_time_fact_scd_join.png` |
 | **Task 3.6 (C17)** | **SCD Type 2 History Verification:** Shows expired record (`dbt_valid_to` populated) and active record for client state transition. | `10_task_3_6_c17_scd2_client_history_tracking.png` |
 | **Task 3.7 (C18)** | **dbt Lineage DAG:** Interactive Directed Acyclic Graph proving end-to-end data pipeline connectivity from seeds to marts. | `11_task_3_7_c18_dbt_lineage_dag_graph.png` |
+
+## 📅 Project Management & Work Breakdown Structure (WBS)
+
+The project execution was organized into four key technical milestones using task-tracking software (Google Tasks) to ensure full coverage of certification competencies:
+#### Phase 1: Infrastructure, Operations & Maintenance Strategy
+* **Task 3.1:** Drafted maintenance methodology (Kanban/ITIL framework), SLA definitions, and system metric tables.
+* **Task 3.2:** Configured `postgresql.conf` logging parameters and outlined dbt failure alerting.
+* **Task 3.3:** Created bash backup scripts (`pg_dump`), configured `crontab` schedules, and tested `pg_restore` disaster recovery procedures.
+* **Environment Setup:** Validated local environment (PostgreSQL 16, dbt 1.11, Linux/WSL2 execution environment).
+
+#### Phase 2: Data Pipeline & SCD Implementation (C16 & C17)
+* **Task 3.4:** Seeded `raw_retours.csv`, built `stg_retours.sql`, modeled `fact_retours.sql` with dimensional joins, and validated schema assertions using `dbt test`.
+* **Task 3.6:** Drafted theoretical foundations for SCD Types 1, 2, and 3; implemented SCD Type 1 on `dim_produit.sql`; executed `dbt snapshot` on `scd_client`; and wrote Point-in-Time SQL join logic between `fact_commandes` and `scd_client`.
+
+#### Phase 3: Security, RBAC & GDPR Governance (C18)
+* **Task 3.5:** Provisioned reporting user access via SQL scripts with restricted `GRANT SELECT` privileges, drafted the GDPR Processing Register (*Registre des traitements*), and implemented automated data anonymization/purge procedures.
+* **Documentation:** Populated technical report sections with execution logs, code blocks, and model architecture explanations.
+
+#### Phase 4: Scalability, Lineage & Final Audit Delivery
+* **Task 3.7:** Authored scalability procedures for datamart expansion, generated `dbt docs` metadata, updated logical/physical star schema diagrams, and captured dbt Lineage Graph DAGs.
+* **Final Delivery:** Cross-verified implementation against certification competencies (C16, C17, C18) and finalized comprehensive deliverable audit artifacts.
