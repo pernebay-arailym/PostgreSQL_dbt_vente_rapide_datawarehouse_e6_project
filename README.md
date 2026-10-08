@@ -213,8 +213,8 @@ Data integrity is protected by over 70+ automated tests executed via `dbt test`.
 
 Audit artifacts proving full compliance for certification review are archived in `screenshots_report/`:
 
-| Task / Competency | Deliverable Description | Audit Screenshot Asset |
-| :--- | :--- | :--- |
+| Task / Competency | Deliverable Description      | Audit Screenshot Asset |
+| :--- | :----------- | :--- |
 | **Task 3.1 (C16)** | **dbt Connection Verification:** Validates database connection and adapter configuration via `dbt debug`. | `screenshots_report/01_dbt_connection_debug.png` |
 | **Task 3.2 (C16)** | **Staging & Seeds Execution:** Execution output of staging views and seed loading (`stg_retours` & `dbt seed`). | `screenshots_report/02_run_stg_retours_sql_view_model&dbt_seed.png` |
 | **Task 3.3 (C16)** | **Fact Model Execution:** Terminal output verifying successful `dbt run` for `fact_retours` model. | `screenshots_report/03_run_output_sql_view_model_fact_retours.png` |
