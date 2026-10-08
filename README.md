@@ -213,16 +213,16 @@ Data integrity is protected by over 70+ automated tests executed via `dbt test`.
 
 Audit artifacts proving full compliance for certification review are archived in `screenshots_report/`:
 
-| Task / Competency | Deliverable Description                          | Audit Screenshot Asset |
-| :--- | :----------- | :--- |
-| **Task 3.1 (C16)** | **dbt Connection Verification:** Validates database connection and adapter configuration via `dbt debug`. | `screenshots_report/01_dbt_connection_debug.png` |
-| **Task 3.2 (C16)** | **Staging & Seeds Execution:** Execution output of staging views and seed loading (`stg_retours` & `dbt seed`). | `screenshots_report/02_run_stg_retours_sql_view_model&dbt_seed.png` |
-| **Task 3.3 (C16)** | **Fact Model Execution:** Terminal output verifying successful `dbt run` for `fact_retours` model. | `screenshots_report/03_run_output_sql_view_model_fact_retours.png` |
-| **Task 3.4 (C18)** | **Data Quality Testing:** Test suite results running schema and custom assertions on `fact_retours`. | `screenshots_report/04_test_output_fact_retours.png` |
-| **Task 3.4 (C16)** | **Local Mart Verification:** Query results verifying populated analytical records in `fact_retours`. | `screenshots_report/05_local_dbt_fact_retours.png` |
-| **Task 3.4 (C16)** | **Local Staging Verification:** Query results verifying cleaned staging data in `stg_retours`. | `screenshots_report/06_local_dbt_stg_retours.png` |
-| **Task 3.5 (C18)** | **RBAC Read-Only Test (Part A):** Proof of restricted permissions for `reporting` read-only user execution. | `screenshots_report/07_b_task_3_5_readonly_test.png` |
-| **Task 3.5 (C18)** | **RBAC Read-Only Test (Part B):** Verification of write protection preventing data modification by read-only role. | `screenshots_report/08_task_3_5_readonly_test.png` |
-| **Task 3.6 (C17)** | **Point-in-Time Join Execution:** Query output demonstrating historical location matching between order transactions and customer snapshot states. | `screenshots_report/09_task_3_6_c17_point_in_time_fact_scd_join.png` |
-| **Task 3.6 (C17)** | **SCD Type 2 History Verification:** Shows expired record (`dbt_valid_to` populated) and active record for client state transition. | `screenshots_report/10_task_3_6_c17_scd2_client_history_tracking.png` |
-| **Task 3.7 (C18)** | **dbt Lineage DAG:** Interactive Directed Acyclic Graph proving end-to-end data pipeline connectivity from seeds to marts. | `screenshots_report/11_task_3_7_c18_dbt_lineage_dag_graph.png` |
+| Task / Competency | Deliverable Description | Audit Screenshot Asset |
+| :--- | :--- | :--- |
+| **Task 3.1 (C16)** | **dbt Connection Verification:** Validates database connection and adapter configuration via `dbt debug`. | `01_dbt_connection_debug.png` |
+| **Task 3.2 (C16)** | **Staging & Seeds Execution:** Execution output of staging views and seed loading (`stg_retours` & `dbt seed`). | `02_run_stg_retours_sql_view_model&dbt_seed.png` |
+| **Task 3.3 (C16)** | **Fact Model Execution:** Terminal output verifying successful `dbt run` for `fact_retours` model. | `03_run_output_sql_view_model_fact_retours.png` |
+| **Task 3.4 (C18)** | **Data Quality Testing:** Test suite results running schema and custom assertions on `fact_retours`. | `04_test_output_fact_retours.png` |
+| **Task 3.4 (C16)** | **Local Mart Verification:** Query results verifying populated analytical records in `fact_retours`. | `05_local_dbt_fact_retours.png` |
+| **Task 3.4 (C16)** | **Local Staging Verification:** Query results verifying cleaned staging data in `stg_retours`. | `06_local_dbt_stg_retours.png` |
+| **Task 3.5 (C18)** | **RBAC Read-Only Test (Part A):** Proof of restricted permissions for `reporting` read-only user execution. | `07_b_task_3_5_readonly_test.png` |
+| **Task 3.5 (C18)** | **RBAC Read-Only Test (Part B):** Verification of write protection preventing data modification by read-only role. | `08_task_3_5_readonly_test.png` |
+| **Task 3.6 (C17)** | **Point-in-Time Join Execution:** Query output demonstrating historical location matching between order transactions and customer snapshot states. | `09_task_3_6_c17_point_in_time_fact_scd_join.png` |
+| **Task 3.6 (C17)** | **SCD Type 2 History Verification:** Shows expired record (`dbt_valid_to` populated) and active record for client state transition. | `10_task_3_6_c17_scd2_client_history_tracking.png` |
+| **Task 3.7 (C18)** | **dbt Lineage DAG:** Interactive Directed Acyclic Graph proving end-to-end data pipeline connectivity from seeds to marts. | `11_task_3_7_c18_dbt_lineage_dag_graph.png` |
